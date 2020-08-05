@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logoImg from "../../assets/logo.svg";
-import landingImg from "../../assets/landing.svg";
+import logoImg from "../../assets/images/logo.svg";
+import landingImg from "../../assets/images/landing.svg";
 
 import studyIcon from "../../assets/icons/study.svg";
 import giveClassesIcon from "../../assets/icons/give-classes.svg";
@@ -16,7 +16,7 @@ function Landing() {
       <div id="page-landing-content" className="container">
         <div className="logo-container">
           <img src={logoImg} alt="Proffy" />
-          <h2>Your online learning platform</h2>
+          <h2>Online learning platform</h2>
         </div>
 
         <img src={landingImg} alt="Learning platform" className="hero-image" />
