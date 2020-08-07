@@ -4,35 +4,37 @@ import whatsappIcon from "../../assets/icons/whatsapp.svg";
 
 import "./styles.css";
 
-interface TeacherItemProps {}
+export interface Teacher {
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  subject: string;
+  whatsapp: string;
+}
 
-const TeacherItem: React.FC<TeacherItemProps> = (props) => {
+interface TeacherItemProps {
+  teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
   return (
     <article className="teacher-item">
       <header>
-        <img
-          src="https://avatars2.githubusercontent.com/u/60102062?s=460&u=d46cf65e8d14695ff7ef324c1bc2d903d8248f24&v=4"
-          alt="Gabriel Altair Rocha"
-        />
+        <img src={teacher.avatar} alt={teacher.name} />
         <div>
-          <strong>Gabriel Rocha</strong>
-          <span>Alien studies</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
 
-      <p>
-        Expert in alien communications.
-        <br />
-        <br />
-        Experienced several abductions and frequently talks with non human
-        beings. Teached more than 15 people, who can now have a more fulfilling
-        life by making friends from another galaxies.
-      </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
           Price/hour
-          <strong>U$ 45</strong>
+          <strong>U$ {teacher.cost}</strong>
         </p>
         <button type="button">
           <img src={whatsappIcon} alt="whatsapp" />
